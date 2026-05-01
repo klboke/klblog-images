@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Paseo Git worktree parallel agent workflow</title>
+  <desc id="desc">Paseo starts multiple coding agents in separate Git worktrees so different tasks can be developed and reviewed in parallel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfbfb"/>
+      <stop offset="1" stop-color="#edf3f7"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#111827" flood-opacity="0.13"/>
+    </filter>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; fill: #172033; }
+      .title { font-size: 36px; font-weight: 800; }
+      .muted { font-size: 20px; fill: #667085; }
+      .label { font-size: 23px; font-weight: 700; }
+      .small { font-size: 18px; fill: #667085; }
+      .card { fill: #fff; stroke: #d7dde5; stroke-width: 2; filter: url(#shadow); }
+      .worktree { fill: #f7fafc; stroke: #b9c4d0; stroke-width: 2; }
+      .line { stroke: #536579; stroke-width: 4; fill: none; stroke-linecap: round; marker-end: url(#arrowhead); }
+      .merge { stroke: #a76132; stroke-width: 4; fill: none; stroke-linecap: round; marker-end: url(#arrowhead2); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#536579"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#a76132"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="520" rx="34" fill="url(#bg)"/>
+  <text x="70" y="76" class="title">多 Agent 并行，不混工作区</text>
+  <text x="70" y="112" class="muted">Paseo 用 Git worktree 给每个 Agent 分配独立目录和分支</text>
+
+  <rect x="70" y="190" width="190" height="96" rx="22" class="card"/>
+  <text x="112" y="232" class="label">需求任务</text>
+  <text x="112" y="263" class="small">修复 / 重构 / Review</text>
+
+  <path d="M278 238 H382" class="line"/>
+
+  <rect x="400" y="168" width="220" height="140" rx="24" class="card"/>
+  <text x="458" y="220" class="label">Paseo</text>
+  <text x="444" y="255" class="small">拆分任务</text>
+  <text x="444" y="284" class="small">创建 worktree</text>
+
+  <path d="M640 188 C720 142 746 124 824 124" class="line"/>
+  <path d="M640 238 H824" class="line"/>
+  <path d="M640 288 C720 342 746 370 824 392" class="line"/>
+
+  <rect x="840" y="72" width="250" height="104" rx="22" class="worktree"/>
+  <text x="878" y="115" class="label">Agent A</text>
+  <text x="878" y="146" class="small">worktree/fix-bug</text>
+
+  <rect x="840" y="202" width="250" height="104" rx="22" class="worktree"/>
+  <text x="878" y="245" class="label">Agent B</text>
+  <text x="878" y="276" class="small">worktree/add-tests</text>
+
+  <rect x="840" y="332" width="250" height="104" rx="22" class="worktree"/>
+  <text x="878" y="375" class="label">Agent C</text>
+  <text x="878" y="406" class="small">worktree/refactor-ui</text>
+
+  <path d="M955 176 C955 190 955 190 955 202" class="merge"/>
+  <path d="M955 306 C955 322 955 322 955 332" class="merge"/>
+  <path d="M1095 254 C1130 254 1144 254 1144 254" class="merge"/>
+  <text x="995" y="490" class="small">Review 后再合并到主分支</text>
+</svg>
